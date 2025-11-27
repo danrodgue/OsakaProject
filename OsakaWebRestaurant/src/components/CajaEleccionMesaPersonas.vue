@@ -6,34 +6,36 @@
     <div id="seleccion_mesa">
         <input type="number" id="number_mesa" placeholder="Número de mesa">
     </div>
-    <button @click=recuperar_values id="confirm_mesa" class="boton_confirmar">CONFIRMAR</button>
+    <!-- <button @click=recuperar_values id="confirm_mesa" class="boton_confirmar">CONFIRMAR</button> -->
+    <BotonBasico @click=recuperar_values id="confirmar_mesa" :texto="BtnMensaje"></BotonBasico>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import BotonBasico from './BotonBasico.vue'
+import { useToast } from 'vue-toast-notification'
+const toast = useToast()
 const recuperar_values = ()=>{
     let n_mesa = ref(number_mesa.value)
     let n_personas = ref(number_personas.value)
-    console.log(n_personas.value,n_mesa.value)
+    if(n_mesa.value == "" || n_personas.value == "" ){
+        toast.warning("Debes introducir nº de mesa y nº de personas")
+        return
+    }else{
+        localStorage.setItem("n_mesa", n_value)
+        localStorage.setItem("n_personas", n_personas.value)
+        toast.success("Gracias!")
+        return 
+    }
 }
+const BtnMensaje = "CONFIRMAR"
 </script>
 
 <style lang="sass" scoped>
 $color_botones: #d62828
 $color_botones_hover: #a7c957
 $color_input: #6f1d1b
-.boton_confirmar
-    padding: 0.5rem
-    border-radius: 15px
-    border: none
-    background-color: $color_botones
-    color: white
-    font-size: 14px
-    font-weight: 600
-    &:hover
-        background-color: $color_botones_hover
-
 #container_seleccion_mesa_personas
     border: 2px solid red
     padding: 10rem
