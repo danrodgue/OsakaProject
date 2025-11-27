@@ -1,5 +1,5 @@
 <template>
-  <button class="boton_confirmar">
+  <button @click=irmenu class="boton_confirmar">
     {{ texto }}
   </button>
 </template>
@@ -7,12 +7,13 @@
 <script setup>
 import { defineProps } from 'vue';
 
+
 const props = defineProps({
   texto: {
     type: String,
-    required: true}
-  })
-
+    required: true
+  }
+})
 </script>
 
 <style lang="sass" scoped>

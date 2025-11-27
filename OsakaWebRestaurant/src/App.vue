@@ -4,10 +4,15 @@
 
 <template>
   <main>
-    <RouterView></RouterView>
+    <transition name="fade" mode="out-in">  
+      <RouterView :key="$route.fullPath" />
+    </transition>
   </main>
 </template>
 
-<style scoped>
-
+<style lang="sass" scoped>
+.fade-enter-active,.fade-leave-active
+  transition: opacity 0.4s ease
+.fade-enter-from,.fade-leave-to
+  opacity: 0
 </style>

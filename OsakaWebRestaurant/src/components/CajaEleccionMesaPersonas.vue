@@ -15,17 +15,44 @@
 import { ref } from 'vue'
 import BotonBasico from './BotonBasico.vue'
 import { useToast } from 'vue-toast-notification'
+import { useRouter } from 'vue-router' 
+
 const toast = useToast()
+const router = useRouter() 
+
+
 const recuperar_values = ()=>{
     let n_mesa = ref(number_mesa.value)
     let n_personas = ref(number_personas.value)
     if(n_mesa.value == "" || n_personas.value == "" ){
-        toast.warning("Debes introducir nº de mesa y nº de personas")
+        toast.warning("Debes introducir nºde mesa y nºde personas",{
+            duration: 1500,
+            style: {
+                background: "#d62828",   // color de fondo
+                color: "#fff",            // color de texto
+                fontWeight: "900",       // texto en negrita
+                borderRadius: "15px",      // bordes redondeados
+                padding: "12px 18px",     // espaciado interno
+                fontSize: "20px"          // tamaño de fuente
+            }
+        })
         return
     }else{
-        localStorage.setItem("n_mesa", n_value)
-        localStorage.setItem("n_personas", n_personas.value)
-        toast.success("Gracias!")
+        toast.success("Gracias!",{
+            duration: 1000,
+            style: {
+                background: "#a7c957",   // color de fondo
+                color: "#fff",            // color de texto
+                fontWeight: "900",       // texto en negrita
+                borderRadius: "15px",      // bordes redondeados
+                padding: "12px 18px",     // espaciado interno
+                fontSize: "20px"          // tamaño de fuente
+            }
+        })
+
+        setTimeout(() => {
+            router.push("/VistaEleccionMenu")
+        }, 1100);
         return 
     }
 }
