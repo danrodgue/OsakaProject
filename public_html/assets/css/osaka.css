@@ -1,0 +1,11 @@
+:root {
+  --osaka-primary: #e91e63;
+  --osaka-accent: #3f51b5;
+}
+.brand-txt { font-weight: 600; }
+.header .btn-primary { background-color: var(--osaka-primary); border-color: var(--osaka-primary); }
+.btn-primary { background-color: var(--osaka-primary); border-color: var(--osaka-primary); }
+.btn-primary:hover { background-color: #c2185b; border-color: #c2185b; }
+#pedido .card { border: 1px solid rgba(255,255,255,0.12); }
+#pedidoStepsNav .step-pill.active { background-color: var(--osaka-primary); color: #fff; }
+#buffetTotal.badge-info { background-color: var(--osaka-accent); }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Osaka | Paso 3</title>
+  <link rel="stylesheet" href="public_html/assets/vendors/themify-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="public_html/assets/vendors/animate/animate.css">
+  <link rel="stylesheet" href="public_html/assets/css/foodhut.css">
+  <link rel="stylesheet" href="public_html/assets/css/osaka.css">
+</head>
+<body>
+  <nav class="custom-navbar navbar navbar-expand-lg navbar-dark fixed-top" data-spy="affix" data-offset-top="10">
+    <a class="navbar-brand m-auto" href="index.html"><img src="public_html/assets/imgs/logo.svg" class="brand-img" alt=""><span class="brand-txt">Osaka</span></a>
+  </nav>
+  <header class="header"><div class="overlay text-white text-center"><h1 class="display-4">Paso 3: Menú</h1></div></header>
+  <div class="container my-5">
+    <div id="pedidoAlerts" class="mb-3"></div>
+    <div id="categoryTabs" class="nav nav-pills mb-3"></div>
+    <div id="subcategoryTabs" class="nav nav-pills mb-3"></div>
+    <div id="dishGrid" class="row"></div>
+    <div class="mt-3">
+      <span id="categoryCounter" class="badge badge-warning"></span>
+      <button id="btnConfirmarCategoria" class="btn btn-success ml-2">Confirmar categoría</button>
+    </div>
+    <div class="mt-4">
+      <h6>Seleccionados</h6>
+      <ul id="seleccionadosList" class="list-group"></ul>
+    </div>
+    <div class="mt-3 d-flex justify-content-between">
+      <a href="buffet.html" class="btn btn-outline-secondary">Atrás</a>
+      <button id="btnResumen" class="btn btn-primary">Ver resumen</button>
+    </div>
+    <div id="resumenContainer" class="mt-4"></div>
+    <button id="btnEnviarPedido" class="btn btn-primary mt-3">Enviar a BDD</button>
+  </div>
+  <script src="public_html/assets/vendors/jquery/jquery-3.4.1.js"></script>
+  <script src="public_html/assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+  <script src="public_html/assets/vendors/bootstrap/bootstrap.affix.js"></script>
+  <script src="public_html/assets/vendors/wow/wow.js"></script>
+  <script src="public_html/assets/js/osaka.js"></script>
+</body>
+</html>
