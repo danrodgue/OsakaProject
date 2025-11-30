@@ -15,5 +15,7 @@ main
     height: 90vh
     display: flex
     justify-content: center
-    align-items: center
+    align-items: flex-start
+    margin-top: rem
+    background-color: #f9f9f9
 </style>
