@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Osaka | Paso 3</title>
+  <title>Osaka | Plancha - Mar</title>
   <link rel="stylesheet" href="public_html/assets/vendors/themify-icons/css/themify-icons.css">
   <link rel="stylesheet" href="public_html/assets/vendors/animate/animate.css">
   <link rel="stylesheet" href="public_html/assets/css/foodhut.css">
@@ -11,14 +11,15 @@
 </head>
 <body>
   <nav class="custom-navbar navbar navbar-expand-lg navbar-dark fixed-top" data-spy="affix" data-offset-top="10">
-    <a class="navbar-brand m-auto" href="index.html"><img src="public_html/assets/imgs/logo.svg" class="brand-img" alt=""><span class="brand-txt">Osaka</span></a>
+    <a class="navbar-brand m-auto" href="index.html">
+      <img src="public_html/assets/imgs/logo.svg" class="brand-img" alt=""><span class="brand-txt">Osaka</span>
+    </a>
   </nav>
   <header class="header">
     <div class="overlay text-white text-center">
-      <h1 class="display-4">Paso 3: Menú</h1>
+      <h1 class="display-4">Plancha · Mar</h1>
     </div>
   </header>
-
   <div class="container my-5">
     <nav class="osaka-menu-nav">
       <ul class="osaka-menu-list">
@@ -64,8 +65,61 @@
       </ul>
     </nav>
 
-    <div class="mt-4 text-center">
-      <a href="buffet.html" class="btn btn-outline-secondary mr-2">Atrás</a>
+    <h2 class="text-center mb-4 mt-4">Platos de mar</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h5 class="mb-3">Calientes</h5>
+        <ul class="list-group mb-4">
+          <li class="list-group-item">
+            <strong>8. Chipirones fritos</strong><br>
+            <small>Fried baby squid</small><br>
+            <span class="text-danger font-weight-bold">8,95€</span>
+          </li>
+          <li class="list-group-item">
+            <strong>16. Merluza con salsa Teriyaki</strong><br>
+            <small>Hake with teriyaki sauce</small><br>
+            <span class="text-danger font-weight-bold">6,95€</span>
+          </li>
+          <li class="list-group-item">
+            <strong>22. Langostino con sal y pimienta</strong><br>
+            <small>Prawn with salt and pepper</small><br>
+            <span class="text-danger font-weight-bold">8,95€</span>
+          </li>
+          <li class="list-group-item">
+            <strong>40. Pata de sepia con salsa agridulce</strong><br>
+            <small>Cuttlefish leg with sweet and sour sauce (se puede hacer sin gluten)</small><br>
+            <span class="text-danger font-weight-bold">8,95€</span>
+          </li>
+          <li class="list-group-item">
+            <strong>40S. Pata de sepia con sal y pimienta</strong><br>
+            <small>Cuttlefish leg with salt and pepper</small><br>
+            <span class="text-danger font-weight-bold">8,95€</span>
+          </li>
+        </ul>
+
+        <h5 class="mb-3">A la plancha</h5>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <strong>17. Salmón a la plancha</strong><br>
+            <small>Grilled salmon</small><br>
+            <span class="text-danger font-weight-bold">9,95€</span>
+          </li>
+          <li class="list-group-item">
+            <strong>34. Navajas a la plancha</strong><br>
+            <small>Grilled razor (4ud)</small><br>
+            <span class="text-danger font-weight-bold">5,50€</span>
+          </li>
+          <li class="list-group-item">
+            <strong>34A. Almeja a la plancha</strong><br>
+            <small>Grilled clams</small><br>
+            <span class="text-danger font-weight-bold">6,95€</span>
+          </li>
+        </ul>
+
+        <div class="text-center mt-4">
+          <a href="menu.html" class="btn btn-outline-secondary">Volver al menú</a>
+        </div>
+      </div>
     </div>
   </div>
   <script src="public_html/assets/vendors/jquery/jquery-3.4.1.js"></script>
@@ -77,12 +131,12 @@
     $(function () {
       $('.osaka-menu-link').on('click', function () {
         var item = $(this).closest('.osaka-menu-item');
-        // cerrar otros
         $('.osaka-menu-item').not(item).removeClass('osaka-open');
-        // alternar el actual
         item.toggleClass('osaka-open');
       });
     });
   </script>
 </body>
 </html>
+
+

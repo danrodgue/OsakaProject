@@ -92,8 +92,10 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../imgs/main.jpg');
   background-size: cover;
   background-position: center;
-  min-height: 40vh;
-  /* Reduced height for mobile */
+  height: 50vh;
+  max-height: 500px;
+  min-height: 15vh;
+  /* Reduced image height so it no longer fills the whole screen */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,6 +149,84 @@ body {
   color: var(--osaka-dark);
 }
 
+/* Top menu (menu.html) */
+.osaka-menu-nav {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  padding: 0.5rem 0;
+}
+
+.osaka-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.osaka-menu-item {
+  position: relative;
+}
+
+.osaka-menu-link {
+  background: transparent;
+  border: none;
+  padding: 0.25rem 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--osaka-secondary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.osaka-menu-link:hover {
+  color: var(--osaka-primary);
+}
+
+.osaka-menu-chevron {
+  font-size: 0.7rem;
+}
+
+.osaka-submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0.35rem;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0.35rem 0.75rem;
+  min-width: 150px;
+  display: none;
+  z-index: 10;
+}
+
+.osaka-submenu li {
+  font-size: 0.9rem;
+  padding: 0.2rem 0;
+  white-space: nowrap;
+}
+
+.osaka-submenu-link {
+  color: var(--osaka-secondary);
+  text-decoration: none;
+}
+
+.osaka-submenu-link:hover {
+  color: var(--osaka-primary);
+  text-decoration: none;
+}
+
+.osaka-menu-item:hover .osaka-submenu,
+.osaka-menu-item.osaka-open .osaka-submenu {
+  display: block;
+}
+
 /* Dish Page */
 .form-check {
   padding: 10px;
@@ -170,7 +250,9 @@ body {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .header {
-    min-height: 30vh;
+    height: 35vh;
+    max-height: 320px;
+    min-height: 12vh;
   }
 
   .header .display-2 {
