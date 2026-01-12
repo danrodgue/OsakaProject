@@ -23,15 +23,15 @@ export const menuItems = [
   
   // EDAMAME
   { id: 13, number: '70', name: 'Edamame', category: 'entrantes', buffetType: ['buffetDia'], description: 'Vainas de soja tiernas', image: 'https://i.imgur.com/XCvn0iv.jpg', customizations: [] },
-  { id: 14, number: '71', name: 'Edamame chili', category: 'entrantes', buffetType: ['buffetDia'], description: 'Edamame con chili', image: 'https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=500&h=500&fit=crop&q=90', customizations: [] },
+  { id: 14, number: '71', name: 'Edamame chili', category: 'entrantes', buffetType: ['buffetDia'], description: 'Edamame con chili', image: 'https://i.imgur.com/BVILJpk.jpg', customizations: [] },
   
   // PANES Y ROLLITOS
-  { id: 15, number: '4A', name: 'Pan dulce', category: 'panes', buffetType: ['buffetDia'], description: 'Pan dulce japonés', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 16, number: '4B', name: 'Pan Baozi', category: 'panes', buffetType: ['buffetDia'], description: 'Pan baozi al vapor', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 17, number: '4V', name: 'Pan de verduras', category: 'panes', buffetType: ['buffetDia'], description: 'Pan relleno de verduras', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 18, number: '4G', name: 'Pan de langostino', category: 'panes', buffetType: ['buffetDia'], description: 'Pan relleno de langostino', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 19, number: '4C', name: 'Pan de Pollo', category: 'panes', buffetType: ['buffetDia'], description: 'Pan relleno de pollo', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 20, number: '4', name: 'Pan de la casa', category: 'panes', buffetType: ['buffetDia'], description: 'Pan especial de la casa', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=500&fit=crop&q=90', customizations: [] },
+  { id: 15, number: '4A', name: 'Pan dulce', category: 'panes', buffetType: ['buffetDia'], description: 'Pan dulce japonés', image: 'https://i.imgur.com/n028sxX.jpg', customizations: [] },
+  { id: 16, number: '4B', name: 'Pan Baozi', category: 'panes', buffetType: ['buffetDia'], description: 'Pan baozi al vapor', image: 'https://i.imgur.com/vTxQiAA.jpg', customizations: [] },
+  { id: 17, number: '4V', name: 'Pan de verduras', category: 'panes', buffetType: ['buffetDia'], description: 'Pan relleno de verduras', image: 'https://i.imgur.com/xErdtjj.jpg', customizations: [] },
+  { id: 18, number: '4G', name: 'Pan de langostino', category: 'panes', buffetType: ['buffetDia'], description: 'Pan relleno de langostino', image: 'https://i.imgur.com/ZjVzcFu.jpg', customizations: [] },
+  { id: 19, number: '4C', name: 'Pan de Pollo', category: 'panes', buffetType: ['buffetDia'], description: 'Pan relleno de pollo', image: 'https://i.imgur.com/ebdPqod.jpg', customizations: [] },
+  { id: 20, number: '4', name: 'Pan de la casa', category: 'panes', buffetType: ['buffetDia'], description: 'Pan especial de la casa', image: 'https://i.imgur.com/sko99Ye.jpg', customizations: [] },
   { id: 21, number: '5V', name: 'Rollitos de verduras', category: 'rollitos', buffetType: ['buffetDia'], description: 'Rollitos de verduras', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=500&fit=crop&q=90', customizations: [] },
   { id: 22, number: '5', name: 'Mini rollo', category: 'rollitos', buffetType: ['buffetDia'], description: 'Mini rollitos', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=500&fit=crop&q=90', customizations: [] },
   
@@ -42,7 +42,7 @@ export const menuItems = [
   { id: 26, number: '48C', name: 'Gyoza de pollo con curry', category: 'empanadillas', buffetType: ['buffetDia'], description: 'Gyoza de pollo con curry', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=500&fit=crop&q=90', customizations: [] },
   
   // TAKOYAKI
-  { id: 27, number: '5T', name: 'Takoyaki', category: 'entrantes', buffetType: ['buffetDia'], description: 'Bolitas de pulpo', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=500&fit=crop&q=90', customizations: [] },
+  { id: 27, number: '5T', name: 'Takoyaki', category: 'entrantes', buffetType: ['buffetDia'], description: 'Bolitas de pulpo', image: 'https://i.imgur.com/sOsIna6.jpg', customizations: [] },
   
   // PLATOS PRINCIPALES - POLLO
   { id: 28, number: '8', name: 'Chipirones', category: 'principales', buffetType: ['buffetDia'], description: 'Chipirones fritos', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
