@@ -47,12 +47,6 @@ const OrderSummary = ({ orderData, onNewOrder }) => {
               <span className="info-label">Fecha y Hora:</span>
               <span className="info-value">{orderDate}</span>
             </div>
-            {orderData.drink && (
-              <div className="info-row highlight">
-                <span className="info-label">Bebida:</span>
-                <span className="info-value">{orderData.drink.name} - {orderData.drink.price?.toFixed(2) || '0.00'} €</span>
-              </div>
-            )}
           </div>
 
           <div className="ticket-items">

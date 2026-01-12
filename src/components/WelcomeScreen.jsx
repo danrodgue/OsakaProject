@@ -35,9 +35,6 @@ const WelcomeScreen = ({ onComplete }) => {
                   <div className="menu-option-content">
                     <h3>{menu.name}</h3>
                     <p>{menu.description}</p>
-                    {menu.requiresDrink && (
-                      <span className="drink-required">* Bebida obligatoria</span>
-                    )}
                   </div>
                 </button>
               ))}

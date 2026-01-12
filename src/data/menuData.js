@@ -211,117 +211,24 @@ export const menuItems = [
   { id: 142, number: '87', name: 'Vieira al vapor', category: 'complementarios', buffetType: ['buffetNoche', 'complementarios'], description: 'Vieira al vapor', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
 ];
 
-// Bebidas organizadas por categorías
-export const drinkCategories = [
-  { id: 'vinos-tintos', name: 'Vinos Tintos', icon: '🍷' },
-  { id: 'vinos-blancos', name: 'Vinos Blancos', icon: '🥂' },
-  { id: 'vinos-rosados', name: 'Vinos Rosados', icon: '🍷' },
-  { id: 'refrescos', name: 'Refrescos', icon: '🥤' },
-  { id: 'cava-champan', name: 'Cava y Champán', icon: '🍾' },
-  { id: 'cafe-infusiones', name: 'Café e Infusiones', icon: '☕' },
-];
-
-export const drinks = [
-  // VINOS TINTOS - CRIANZA
-  { id: 1, name: 'Cune 3/8 (Rioja)', category: 'vinos-tintos', subcategory: 'Crianza', price: 11.95, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&h=500&fit=crop&q=90' },
-  { id: 2, name: 'Vino de la casa (Roble Ribera Duero)', category: 'vinos-tintos', subcategory: 'Crianza', price: 15.50, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&h=500&fit=crop&q=90' },
-  { id: 3, name: 'Coto (Rioja)', category: 'vinos-tintos', subcategory: 'Crianza', price: 19.50, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&h=500&fit=crop&q=90' },
-  { id: 4, name: 'Enate Joven Unico (Somontano)', category: 'vinos-tintos', subcategory: 'Crianza', price: 20.95, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&h=500&fit=crop&q=90' },
-  { id: 5, name: 'Cune (Rioja)', category: 'vinos-tintos', subcategory: 'Crianza', price: 20.50, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&h=500&fit=crop&q=90' },
-  { id: 6, name: 'Marqués de Cáceres (Rioja)', category: 'vinos-tintos', subcategory: 'Crianza', price: 21.95, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&h=500&fit=crop&q=90' },
-  { id: 7, name: 'Viña Real (Rioja)', category: 'vinos-tintos', subcategory: 'Crianza', price: 21.95, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&h=500&fit=crop&q=90' },
-  { id: 8, name: 'Azpilicueta (Rioja)', category: 'vinos-tintos', subcategory: 'Crianza', price: 23.95, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&h=500&fit=crop&q=90' },
-  { id: 9, name: 'Enate Crianza (Somontano)', category: 'vinos-tintos', subcategory: 'Crianza', price: 26.95, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&h=500&fit=crop&q=90' },
-  { id: 10, name: 'Viña Mayor (Ribera duero)', category: 'vinos-tintos', subcategory: 'Crianza', price: 23.95, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&h=500&fit=crop&q=90' },
-  { id: 11, name: 'Viña Pomal (Rioja)', category: 'vinos-tintos', subcategory: 'Crianza', price: 26.95, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&h=500&fit=crop&q=90' },
-  { id: 12, name: 'Viña Alberdi (Rioja)', category: 'vinos-tintos', subcategory: 'Crianza', price: 26.95, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&h=500&fit=crop&q=90' },
-  { id: 13, name: 'Arzuaga (Ribera duero)', category: 'vinos-tintos', subcategory: 'Crianza', price: 34.95, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&h=500&fit=crop&q=90' },
-  { id: 14, name: 'Viña Pedrosa (Ribera duero)', category: 'vinos-tintos', subcategory: 'Crianza', price: 32.95, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&h=500&fit=crop&q=90' },
-  { id: 15, name: 'Protos (Ribera duero)', category: 'vinos-tintos', subcategory: 'Crianza', price: 36.95, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&h=500&fit=crop&q=90' },
-  
-  // VINOS TINTOS - RESERVAS
-  { id: 16, name: 'Azpilicueta (Rioja)', category: 'vinos-tintos', subcategory: 'Reserva', price: 30.50, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&h=500&fit=crop&q=90' },
-  { id: 17, name: 'Enate (Somontano)', category: 'vinos-tintos', subcategory: 'Reserva', price: 30.50, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&h=500&fit=crop&q=90' },
-  { id: 18, name: 'Viña Tondonia (Rioja)', category: 'vinos-tintos', subcategory: 'Reserva', price: 36.50, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&h=500&fit=crop&q=90' },
-  { id: 19, name: 'Viña Ardanza (Rioja)', category: 'vinos-tintos', subcategory: 'Reserva', price: 36.50, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&h=500&fit=crop&q=90' },
-  { id: 20, name: 'Pesquera (Ribera duero)', category: 'vinos-tintos', subcategory: 'Reserva', price: 50.95, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&h=500&fit=crop&q=90' },
-  { id: 21, name: 'Viña Pedrosa (Ribera duero)', category: 'vinos-tintos', subcategory: 'Reserva', price: 48.95, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&h=500&fit=crop&q=90' },
-  { id: 22, name: 'Vega Sicilia (Valbuena 5 años Ribera Duero)', category: 'vinos-tintos', subcategory: 'Reserva', price: 111.50, image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&h=500&fit=crop&q=90' },
-  
-  // VINOS BLANCOS
-  { id: 23, name: 'Vino de la casa (Rueda)', category: 'vinos-blancos', price: 13.95, image: 'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=500&h=500&fit=crop&q=90' },
-  { id: 24, name: 'Monopole (Rioja)', category: 'vinos-blancos', price: 17.95, image: 'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=500&h=500&fit=crop&q=90' },
-  { id: 25, name: 'Marqués de Cáceres (Rioja)', category: 'vinos-blancos', price: 17.95, image: 'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=500&h=500&fit=crop&q=90' },
-  { id: 26, name: 'Enate Chardonnay 234 (Somontano)', category: 'vinos-blancos', price: 21.95, image: 'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=500&h=500&fit=crop&q=90' },
-  { id: 27, name: 'Marqués de Irún Verdejo (Rueda)', category: 'vinos-blancos', price: 17.95, image: 'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=500&h=500&fit=crop&q=90' },
-  { id: 28, name: 'Marina Alta (Alicante)', category: 'vinos-blancos', price: 17.95, image: 'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=500&h=500&fit=crop&q=90' },
-  { id: 29, name: 'Raimat Chardonnay (Cataluña)', category: 'vinos-blancos', price: 17.95, image: 'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=500&h=500&fit=crop&q=90' },
-  { id: 30, name: 'Viña Sol (Cataluña)', category: 'vinos-blancos', price: 17.95, image: 'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=500&h=500&fit=crop&q=90' },
-  { id: 31, name: 'Viña Esmeralda (Cataluña)', category: 'vinos-blancos', price: 20.95, image: 'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=500&h=500&fit=crop&q=90' },
-  { id: 32, name: 'Blanc Pescador (Cataluña)', category: 'vinos-blancos', price: 16.95, image: 'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=500&h=500&fit=crop&q=90' },
-  { id: 33, name: 'Barbadillo (Andalucia)', category: 'vinos-blancos', price: 16.95, image: 'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=500&h=500&fit=crop&q=90' },
-  { id: 34, name: 'Martín Códax Albariño (Rías Baixas)', category: 'vinos-blancos', price: 24.95, image: 'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=500&h=500&fit=crop&q=90' },
-  { id: 35, name: 'El coto Semi dulce', category: 'vinos-blancos', price: 15.95, image: 'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=500&h=500&fit=crop&q=90' },
-  { id: 36, name: 'El coto Mayor seco', category: 'vinos-blancos', price: 16.95, image: 'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=500&h=500&fit=crop&q=90' },
-  
-  // VINOS ROSADOS
-  { id: 37, name: 'Vino de la casa (Ribera del Duero)', category: 'vinos-rosados', price: 13.95, image: 'https://images.unsplash.com/photo-1546171753-97d7676e4602?w=500&h=500&fit=crop&q=90' },
-  { id: 38, name: 'Cune (Rioja)', category: 'vinos-rosados', price: 15.95, image: 'https://images.unsplash.com/photo-1546171753-97d7676e4602?w=500&h=500&fit=crop&q=90' },
-  { id: 39, name: 'Marqués de Cáceres (Rioja)', category: 'vinos-rosados', price: 17.50, image: 'https://images.unsplash.com/photo-1546171753-97d7676e4602?w=500&h=500&fit=crop&q=90' },
-  { id: 40, name: 'Campanas (Navarra)', category: 'vinos-rosados', price: 15.95, image: 'https://images.unsplash.com/photo-1546171753-97d7676e4602?w=500&h=500&fit=crop&q=90' },
-  { id: 41, name: 'Peñascal', category: 'vinos-rosados', price: 14.95, image: 'https://images.unsplash.com/photo-1546171753-97d7676e4602?w=500&h=500&fit=crop&q=90' },
-  { id: 42, name: 'Mateus Rosé', category: 'vinos-rosados', price: 15.95, image: 'https://images.unsplash.com/photo-1546171753-97d7676e4602?w=500&h=500&fit=crop&q=90' },
-  { id: 43, name: 'Lambrusco', category: 'vinos-rosados', price: 13.95, image: 'https://images.unsplash.com/photo-1546171753-97d7676e4602?w=500&h=500&fit=crop&q=90' },
-  
-  // REFRESCOS
-  { id: 44, name: 'Agua Mineral', category: 'refrescos', price: 2.85, image: 'https://images.unsplash.com/photo-1523362628745-0c100150b504?w=500&h=500&fit=crop&q=90' },
-  { id: 45, name: 'Agua con Gas', category: 'refrescos', price: 3.15, image: 'https://images.unsplash.com/photo-1523362628745-0c100150b504?w=500&h=500&fit=crop&q=90' },
-  { id: 46, name: 'Cerveza (San Miguel)', category: 'refrescos', price: 2.95, image: 'https://images.unsplash.com/photo-1535958637004-5b3619708b2d?w=500&h=500&fit=crop&q=90' },
-  { id: 47, name: 'Cerveza sin alcohol (San Miguel)', category: 'refrescos', price: 3.25, image: 'https://images.unsplash.com/photo-1535958637004-5b3619708b2d?w=500&h=500&fit=crop&q=90' },
-  { id: 48, name: 'Cerveza con limón (San Miguel)', category: 'refrescos', price: 3.25, image: 'https://images.unsplash.com/photo-1535958637004-5b3619708b2d?w=500&h=500&fit=crop&q=90' },
-  { id: 49, name: 'Refrescos (350ml)', category: 'refrescos', price: 3.25, image: 'https://images.unsplash.com/photo-1554866585-cd94860890b7?w=500&h=500&fit=crop&q=90' },
-  { id: 50, name: 'Cerveza Heineken', category: 'refrescos', price: 3.75, image: 'https://images.unsplash.com/photo-1535958637004-5b3619708b2d?w=500&h=500&fit=crop&q=90' },
-  { id: 51, name: 'Cerveza Japonesa', category: 'refrescos', price: 3.95, image: 'https://images.unsplash.com/photo-1608270586620-248524c67de9?w=500&h=500&fit=crop&q=90' },
-  { id: 52, name: 'Sake', category: 'refrescos', price: 6.95, image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500&h=500&fit=crop&q=90' },
-  { id: 53, name: 'Sangría 1L (de la casa)', category: 'refrescos', price: 12.95, image: 'https://images.unsplash.com/photo-1546171753-97d7676e4602?w=500&h=500&fit=crop&q=90' },
-  { id: 54, name: 'Sangría 1,5L (de la casa)', category: 'refrescos', price: 15.95, image: 'https://images.unsplash.com/photo-1546171753-97d7676e4602?w=500&h=500&fit=crop&q=90' },
-  { id: 55, name: 'Ramune', category: 'refrescos', price: 3.15, image: 'https://goo.su/jAxNoGW' },
-  
-  // CAVA Y CHAMPÁN
-  { id: 56, name: 'Carlota Suria Brut', category: 'cava-champan', price: 19.95, image: 'https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=500&h=500&fit=crop&q=90' },
-  { id: 57, name: 'Anna Codorniu Brut Nature', category: 'cava-champan', price: 21.95, image: 'https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=500&h=500&fit=crop&q=90' },
-  { id: 58, name: 'Juve Camps Familia', category: 'cava-champan', price: 29.95, image: 'https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=500&h=500&fit=crop&q=90' },
-  { id: 59, name: 'Moet & Chandon Brut Imperial', category: 'cava-champan', price: 70.95, image: 'https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=500&h=500&fit=crop&q=90' },
-  { id: 60, name: 'Moet & Chandon Brut Rosé', category: 'cava-champan', price: 80.95, image: 'https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=500&h=500&fit=crop&q=90' },
-  
-  // CAFÉ E INFUSIONES
-  { id: 61, name: 'Café', category: 'cafe-infusiones', price: 1.60, image: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=500&h=500&fit=crop&q=90' },
-  { id: 62, name: 'Cortado', category: 'cafe-infusiones', price: 1.70, image: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=500&h=500&fit=crop&q=90' },
-  { id: 63, name: 'Café con leche', category: 'cafe-infusiones', price: 1.80, image: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=500&h=500&fit=crop&q=90' },
-  { id: 64, name: 'Carajillo', category: 'cafe-infusiones', price: 3.50, image: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=500&h=500&fit=crop&q=90' },
-  { id: 65, name: 'Té japonés', category: 'cafe-infusiones', price: 1.80, image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500&h=500&fit=crop&q=90' },
-  { id: 66, name: 'Infusiones (té rojo, manzanilla, poleo, negro)', category: 'cafe-infusiones', price: 1.80, image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500&h=500&fit=crop&q=90' },
-  { id: 67, name: 'Teterra de Té', category: 'cafe-infusiones', price: 6.95, image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500&h=500&fit=crop&q=90' },
-];
-
 export const menuTypes = {
   buffetDia: {
     id: 'buffetDia',
     name: 'Buffet de Día',
     description: 'Lunes a Viernes',
-    requiresDrink: true
+    requiresDrink: false
   },
   buffetNoche: {
     id: 'buffetNoche',
     name: 'Buffet de Noche',
     description: 'Cena',
-    requiresDrink: true
+    requiresDrink: false
   },
   buffetFinSemana: {
     id: 'buffetFinSemana',
     name: 'Buffet Fin de Semana',
     description: 'Sábados, Domingos, Festivos y Vísperas',
-    requiresDrink: true
+    requiresDrink: false
   },
   menuDia: {
     id: 'menuDia',

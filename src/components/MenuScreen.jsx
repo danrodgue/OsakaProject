@@ -89,7 +89,6 @@ const MenuScreen = ({ orderData, onOrderComplete, onBack }) => {
           <h1 className="menu-title">🍱 Carta Digital</h1>
           <p className="menu-subtitle">
             {menuTypeName} - Mesa {orderData.tableNumber}
-            {orderData.drink && ` - Bebida: ${orderData.drink.name}`}
           </p>
         </div>
         <button
@@ -150,7 +149,6 @@ const MenuScreen = ({ orderData, onOrderComplete, onBack }) => {
         onRemove={handleRemoveFromCart}
         onUpdateQuantity={handleUpdateQuantity}
         onConfirm={handleConfirmOrder}
-        drink={orderData.drink}
       />
     </div>
   )

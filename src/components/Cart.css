@@ -102,16 +102,6 @@
   color: var(--color-accent);
 }
 
-.cart-drink-info {
-  background: linear-gradient(135deg, rgba(206, 17, 38, 0.1) 0%, rgba(206, 17, 38, 0.05) 100%);
-  padding: 16px;
-  border-radius: var(--radius-sm);
-  margin-bottom: 25px;
-  border-left: 3px solid var(--color-primary);
-  color: var(--color-white);
-  font-size: 0.95rem;
-}
-
 .cart-items {
   display: flex;
   flex-direction: column;

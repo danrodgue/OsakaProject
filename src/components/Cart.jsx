@@ -1,7 +1,7 @@
 import { FaTimes, FaPlus, FaMinus, FaShoppingCart } from 'react-icons/fa'
 import './Cart.css'
 
-const Cart = ({ items, isOpen, onClose, onRemove, onUpdateQuantity, onConfirm, drink }) => {
+const Cart = ({ items, isOpen, onClose, onRemove, onUpdateQuantity, onConfirm }) => {
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0)
 
   if (!isOpen) return null
@@ -26,11 +26,6 @@ const Cart = ({ items, isOpen, onClose, onRemove, onUpdateQuantity, onConfirm, d
             </div>
           ) : (
             <>
-              {drink && (
-                <div className="cart-drink-info">
-                  <strong>Bebida seleccionada:</strong> {drink.name}
-                </div>
-              )}
               <div className="cart-items">
                 {items.map((item) => (
                   <div key={item.id} className="cart-item">
