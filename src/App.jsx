@@ -9,11 +9,14 @@ function App() {
   const [orderData, setOrderData] = useState({
     menuType: null,
     tableNumber: null,
+    mesaId: null,
+    pedidoId: null,
+    numeroPersonas: null,
     items: []
   })
 
-  const handleWelcomeComplete = (menuType, tableNumber) => {
-    setOrderData(prev => ({ ...prev, menuType, tableNumber }))
+  const handleWelcomeComplete = (menuType, tableNumber, mesaId, pedidoId, numeroPersonas) => {
+    setOrderData(prev => ({ ...prev, menuType, tableNumber, mesaId, pedidoId, numeroPersonas }))
     setCurrentStep('menu')
   }
 
@@ -26,6 +29,9 @@ function App() {
     setOrderData({
       menuType: null,
       tableNumber: null,
+      mesaId: null,
+      pedidoId: null,
+      numeroPersonas: null,
       items: []
     })
     setCurrentStep('welcome')

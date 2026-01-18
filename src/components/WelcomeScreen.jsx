@@ -1,15 +1,77 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { menuTypes } from '../data/menuData'
+import { getMesaByQR, getPedidoActivo, createPedido } from '../utils/api'
 import './WelcomeScreen.css'
 
 const WelcomeScreen = ({ onComplete }) => {
   const [selectedMenu, setSelectedMenu] = useState(null)
-  const [tableNumber, setTableNumber] = useState('')
+  const [numeroPersonas, setNumeroPersonas] = useState('')
+  const [mesaData, setMesaData] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
-  const handleSubmit = (e) => {
+  // Obtener mesa desde QR (el QR contiene ?mesa=QR1)
+  useEffect(() => {
+    const initMesa = async () => {
+      try {
+        const searchParams = new URLSearchParams(window.location.search)
+        const qrCode = searchParams.get('mesa') || searchParams.get('qr')
+        if (!qrCode) {
+          setError('Código QR no válido. Por favor, escanea el código QR de la mesa.')
+          setLoading(false)
+          return
+        }
+
+        const mesa = await getMesaByQR(qrCode)
+        setMesaData(mesa)
+
+        // Verificar si ya existe un pedido activo para esta mesa
+        const pedidoActivo = await getPedidoActivo(mesa.id)
+        if (pedidoActivo) {
+          // Si ya existe un pedido activo, continuar con ese pedido
+          setLoading(false)
+          return
+        }
+
+        setLoading(false)
+      } catch (err) {
+        console.error('Error al obtener mesa:', err)
+        setError('Error al obtener información de la mesa. Por favor, intenta de nuevo.')
+        setLoading(false)
+      }
+    }
+
+    initMesa()
+  }, [])
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    if (selectedMenu && tableNumber.trim()) {
-      onComplete(selectedMenu, tableNumber.trim())
+    if (!selectedMenu || !numeroPersonas || numeroPersonas < 1) {
+      return
+    }
+
+    if (!mesaData) {
+      setError('No se pudo obtener la información de la mesa.')
+      return
+    }
+
+    try {
+      setLoading(true)
+
+      // Verificar si ya existe un pedido activo
+      let pedidoActivo = await getPedidoActivo(mesaData.id)
+
+      if (!pedidoActivo) {
+        // Crear nuevo pedido
+        const nuevoPedido = await createPedido(mesaData.id, parseInt(numeroPersonas))
+        pedidoActivo = { ...nuevoPedido, items: [] }
+      }
+
+      onComplete(selectedMenu, mesaData.numero_mesa, mesaData.id, pedidoActivo.id, parseInt(numeroPersonas))
+    } catch (err) {
+      console.error('Error al crear pedido:', err)
+      setError('Error al crear pedido. Por favor, intenta de nuevo.')
+      setLoading(false)
     }
   }
 
@@ -41,28 +103,41 @@ const WelcomeScreen = ({ onComplete }) => {
             </div>
           </div>
 
+          {mesaData && (
+            <div className="form-section">
+              <p className="mesa-info">Mesa {mesaData.numero_mesa}</p>
+            </div>
+          )}
+
           <div className="form-section">
-            <label htmlFor="tableNumber" className="input-label">
-              Número de Mesa
+            <label htmlFor="numeroPersonas" className="input-label">
+              Número de Personas
             </label>
             <input
-              id="tableNumber"
+              id="numeroPersonas"
               type="number"
               min="1"
-              value={tableNumber}
-              onChange={(e) => setTableNumber(e.target.value)}
-              placeholder="Ej: 5"
+              value={numeroPersonas}
+              onChange={(e) => setNumeroPersonas(e.target.value)}
+              placeholder="Ej: 2"
               className="table-input"
               required
+              disabled={loading || !mesaData}
             />
           </div>
+
+          {error && (
+            <div className="error-message">
+              {error}
+            </div>
+          )}
 
           <button
             type="submit"
             className="submit-button"
-            disabled={!selectedMenu || !tableNumber.trim()}
+            disabled={!selectedMenu || !numeroPersonas || numeroPersonas < 1 || loading || !mesaData}
           >
-            Continuar
+            {loading ? 'Cargando...' : 'Continuar'}
           </button>
         </form>
       </div>

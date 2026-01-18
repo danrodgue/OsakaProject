@@ -1,9 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { menuItems, categories, menuTypes } from '../data/menuData'
 import { FaShoppingCart, FaArrowLeft } from 'react-icons/fa'
 import DishCard from './DishCard'
 import DishModal from './DishModal'
 import Cart from './Cart'
+import { getPedido, addItemToPedido, updateItemInPedido, deleteItemFromPedido, confirmarPedido } from '../utils/api'
+import { joinMesa, onCartUpdate, leaveMesa, connectSocket } from '../utils/socket'
 import './MenuScreen.css'
 
 const MenuScreen = ({ orderData, onOrderComplete, onBack }) => {
@@ -11,6 +13,77 @@ const MenuScreen = ({ orderData, onOrderComplete, onBack }) => {
   const [selectedDish, setSelectedDish] = useState(null)
   const [cartItems, setCartItems] = useState([])
   const [showCart, setShowCart] = useState(false)
+  const [loading, setLoading] = useState(true)
+
+  // Cargar pedido desde la API y configurar WebSocket
+  useEffect(() => {
+    const loadPedido = async () => {
+      if (!orderData.pedidoId) {
+        setLoading(false)
+        return
+      }
+
+      try {
+        // Conectar WebSocket
+        connectSocket()
+        
+        // Unirse a la sala de la mesa
+        if (orderData.mesaId) {
+          joinMesa(orderData.mesaId)
+        }
+
+        // Cargar pedido desde la API
+        const pedido = await getPedido(orderData.pedidoId)
+        
+        // Convertir items de la base de datos al formato del carrito
+        const itemsConvertidos = pedido.items.map(item => {
+          const dish = menuItems.find(d => d.id === item.plato_id)
+          return {
+            id: item.id,
+            dish: dish || { id: item.plato_id, name: 'Plato no encontrado' },
+            quantity: item.cantidad,
+            customizations: item.personalizaciones ? JSON.parse(item.personalizaciones) : [],
+            comments: item.comentarios || null
+          }
+        })
+        
+        setCartItems(itemsConvertidos)
+        setLoading(false)
+      } catch (error) {
+        console.error('Error al cargar pedido:', error)
+        setLoading(false)
+      }
+    }
+
+    loadPedido()
+
+    // Configurar listener de WebSocket para actualizaciones en tiempo real
+    const unsubscribe = onCartUpdate((updatedPedido) => {
+      if (updatedPedido && updatedPedido.items) {
+        const itemsConvertidos = updatedPedido.items.map(item => {
+          const dish = menuItems.find(d => d.id === item.plato_id)
+          return {
+            id: item.id,
+            dish: dish || { id: item.plato_id, name: 'Plato no encontrado' },
+            quantity: item.cantidad,
+            customizations: item.personalizaciones ? JSON.parse(item.personalizaciones) : [],
+            comments: item.comentarios || null
+          }
+        })
+        setCartItems(itemsConvertidos)
+      }
+    })
+
+    // Limpiar al desmontar
+    return () => {
+      if (orderData.mesaId) {
+        leaveMesa(orderData.mesaId)
+      }
+      if (unsubscribe) {
+        unsubscribe()
+      }
+    }
+  }, [orderData.pedidoId, orderData.mesaId])
 
   // Filtrar por categoría y tipo de buffet
   const filteredItems = menuItems.filter(item => {
@@ -41,43 +114,162 @@ const MenuScreen = ({ orderData, onOrderComplete, onBack }) => {
   })
   const menuTypeName = menuTypes[orderData.menuType]?.name || 'Menú'
 
-  const handleAddToCart = (dish, quantity, customizations, comments) => {
-    const cartItem = {
-      id: Date.now(),
-      dish,
-      quantity,
-      customizations,
-      comments
+  const handleAddToCart = async (dish, quantity, customizations, comments) => {
+    if (!orderData.pedidoId) {
+      alert('Error: No hay un pedido activo')
+      return
     }
-    setCartItems(prev => [...prev, cartItem])
-    setSelectedDish(null)
+
+    try {
+      const newItem = await addItemToPedido(orderData.pedidoId, {
+        dish,
+        quantity,
+        customizations,
+        comments
+      })
+
+      // Convertir el item de la base de datos al formato del carrito
+      const cartItem = {
+        id: newItem.id,
+        dish,
+        quantity: newItem.cantidad,
+        customizations: newItem.personalizaciones ? JSON.parse(newItem.personalizaciones) : [],
+        comments: newItem.comentarios || null
+      }
+
+      // Recargar el pedido completo para sincronizar
+      const pedido = await getPedido(orderData.pedidoId)
+      const itemsConvertidos = pedido.items.map(item => {
+        const dishItem = menuItems.find(d => d.id === item.plato_id)
+        return {
+          id: item.id,
+          dish: dishItem || { id: item.plato_id, name: 'Plato no encontrado' },
+          quantity: item.cantidad,
+          customizations: item.personalizaciones ? JSON.parse(item.personalizaciones) : [],
+          comments: item.comentarios || null
+        }
+      })
+      setCartItems(itemsConvertidos)
+      
+      setSelectedDish(null)
+    } catch (error) {
+      console.error('Error al agregar item:', error)
+      alert('Error al agregar item al carrito. Por favor, intenta de nuevo.')
+    }
   }
 
-  const handleRemoveFromCart = (itemId) => {
-    setCartItems(prev => prev.filter(item => item.id !== itemId))
+  const handleRemoveFromCart = async (itemId) => {
+    if (!orderData.pedidoId) {
+      alert('Error: No hay un pedido activo')
+      return
+    }
+
+    try {
+      await deleteItemFromPedido(orderData.pedidoId, itemId)
+
+      // Recargar el pedido completo para sincronizar
+      const pedido = await getPedido(orderData.pedidoId)
+      const itemsConvertidos = pedido.items.map(item => {
+        const dish = menuItems.find(d => d.id === item.plato_id)
+        return {
+          id: item.id,
+          dish: dish || { id: item.plato_id, name: 'Plato no encontrado' },
+          quantity: item.cantidad,
+          customizations: item.personalizaciones ? JSON.parse(item.personalizaciones) : [],
+          comments: item.comentarios || null
+        }
+      })
+      setCartItems(itemsConvertidos)
+    } catch (error) {
+      console.error('Error al eliminar item:', error)
+      alert('Error al eliminar item. Por favor, intenta de nuevo.')
+    }
   }
 
-  const handleUpdateQuantity = (itemId, newQuantity) => {
+  const handleUpdateQuantity = async (itemId, newQuantity) => {
     if (newQuantity <= 0) {
       handleRemoveFromCart(itemId)
       return
     }
-    setCartItems(prev =>
-      prev.map(item =>
-        item.id === itemId ? { ...item, quantity: newQuantity } : item
-      )
-    )
+
+    if (!orderData.pedidoId) {
+      alert('Error: No hay un pedido activo')
+      return
+    }
+
+    try {
+      const item = cartItems.find(i => i.id === itemId)
+      if (!item) return
+
+      await updateItemInPedido(orderData.pedidoId, itemId, {
+        quantity: newQuantity,
+        customizations: item.customizations,
+        comments: item.comments
+      })
+
+      // Recargar el pedido completo para sincronizar
+      const pedido = await getPedido(orderData.pedidoId)
+      const itemsConvertidos = pedido.items.map(item => {
+        const dish = menuItems.find(d => d.id === item.plato_id)
+        return {
+          id: item.id,
+          dish: dish || { id: item.plato_id, name: 'Plato no encontrado' },
+          quantity: item.cantidad,
+          customizations: item.personalizaciones ? JSON.parse(item.personalizaciones) : [],
+          comments: item.comentarios || null
+        }
+      })
+      setCartItems(itemsConvertidos)
+    } catch (error) {
+      console.error('Error al actualizar cantidad:', error)
+      alert('Error al actualizar cantidad. Por favor, intenta de nuevo.')
+    }
   }
 
-  const handleConfirmOrder = () => {
+  const handleConfirmOrder = async () => {
     if (cartItems.length === 0) {
       alert('El carrito está vacío. Añade al menos un plato.')
       return
     }
-    onOrderComplete(cartItems)
+
+    if (!orderData.pedidoId) {
+      alert('Error: No hay un pedido activo')
+      return
+    }
+
+    try {
+      const pedidoConfirmado = await confirmarPedido(orderData.pedidoId)
+      
+      // Convertir items al formato esperado por OrderSummary
+      const itemsConfirmados = pedidoConfirmado.items.map(item => {
+        const dish = menuItems.find(d => d.id === item.plato_id)
+        return {
+          id: item.id,
+          dish: dish || { id: item.plato_id, name: 'Plato no encontrado' },
+          quantity: item.cantidad,
+          customizations: item.personalizaciones ? JSON.parse(item.personalizaciones) : [],
+          comments: item.comentarios || null
+        }
+      })
+
+      onOrderComplete(itemsConfirmados)
+    } catch (error) {
+      console.error('Error al confirmar pedido:', error)
+      alert('Error al confirmar pedido. Por favor, intenta de nuevo.')
+    }
   }
 
   const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0)
+
+  if (loading) {
+    return (
+      <div className="menu-screen">
+        <div style={{ padding: '50px', textAlign: 'center', color: 'var(--color-text)' }}>
+          <p>Cargando pedido...</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="menu-screen">
@@ -155,4 +347,3 @@ const MenuScreen = ({ orderData, onOrderComplete, onBack }) => {
 }
 
 export default MenuScreen
-
