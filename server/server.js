@@ -10,6 +10,7 @@ import { initMesas } from './database/initData.js'
 
 import mesasRoutes from './routes/mesas.js'
 import pedidosRoutes, { setIo } from './routes/pedidos.js'
+import printRoutes from './routes/print.js'
 
 dotenv.config()
 
@@ -31,6 +32,7 @@ app.use(express.json())
 // Rutas
 app.use('/api/mesas', mesasRoutes)
 app.use('/api/pedidos', pedidosRoutes)
+app.use('/api/print', printRoutes)
 
 // Health check
 app.get('/api/health', (req, res) => {

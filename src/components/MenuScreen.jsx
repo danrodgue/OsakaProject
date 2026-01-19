@@ -4,7 +4,7 @@ import { FaShoppingCart, FaArrowLeft } from 'react-icons/fa'
 import DishCard from './DishCard'
 import DishModal from './DishModal'
 import Cart from './Cart'
-import { getPedido, addItemToPedido, updateItemInPedido, deleteItemFromPedido, confirmarPedido } from '../utils/api'
+import { getPedido, addItemToPedido, updateItemInPedido, deleteItemFromPedido, confirmarPedido, imprimirPedido } from '../utils/api'
 import { joinMesa, onCartUpdate, leaveMesa, connectSocket } from '../utils/socket'
 import './MenuScreen.css'
 
@@ -251,6 +251,25 @@ const MenuScreen = ({ orderData, onOrderComplete, onBack }) => {
           comments: item.comentarios || null
         }
       })
+
+      // Send to thermal printer (best-effort) via backend
+      try {
+        const payloadImpresion = {
+          restaurantName: 'Osaka',
+          mesaNumber: orderData.tableNumber,
+          pedidoId: orderData.pedidoId,
+          numero_personas: orderData.numeroPersonas,
+          items: itemsConfirmados.map(i => ({
+            name: i.dish.name,
+            quantity: i.quantity,
+            personalizaciones: i.customizations && i.customizations.length ? JSON.stringify(i.customizations) : null,
+            comentarios: i.comments || null
+          }))
+        }
+        await imprimirPedido(payloadImpresion)
+      } catch (errImpresion) {
+        console.error('Impresión fallida:', errImpresion)
+      }
 
       onOrderComplete(itemsConfirmados)
     } catch (error) {

@@ -106,3 +106,17 @@ export const confirmarPedido = async (pedidoId) => {
   }
   return response.json()
 }
+
+// Enviar pedido a la impresora térmica a través del backend
+export const imprimirPedido = async (pedido) => {
+  const response = await fetch(`${API_BASE_URL}/print`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ order: pedido })
+  })
+  if (!response.ok) {
+    const text = await response.text()
+    throw new Error(`Error de impresión: ${text}`)
+  }
+  return response.json()
+}
