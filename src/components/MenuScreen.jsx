@@ -293,13 +293,14 @@ const MenuScreen = ({ orderData, onOrderComplete, onBack }) => {
   return (
     <div className="menu-screen">
       <header className="menu-header">
-        <button className="back-button" onClick={onBack}>
+        {/* <button className="back-button" onClick={onBack}>
           <FaArrowLeft /> Volver
-        </button>
+        </button> */}
         <div className="header-info">
           <h1 className="menu-title">🍱 Carta Digital</h1>
           <p className="menu-subtitle">
-            {menuTypeName} - Mesa {orderData.tableNumber}
+            {menuTypeName}
+            {/*  - Mesa {orderData.tableNumber} */}
           </p>
         </div>
         <button

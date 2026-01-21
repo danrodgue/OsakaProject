@@ -32,45 +32,45 @@ export const menuItems = [
   { id: 18, number: '4G', name: 'Pan de langostino', category: 'panes', buffetType: ['buffetDia'], description: 'Pan relleno de langostino', image: 'https://i.imgur.com/ZjVzcFu.jpg', customizations: [] },
   { id: 19, number: '4C', name: 'Pan de Pollo', category: 'panes', buffetType: ['buffetDia'], description: 'Pan relleno de pollo', image: 'https://i.imgur.com/ebdPqod.jpg', customizations: [] },
   { id: 20, number: '4', name: 'Pan de la casa', category: 'panes', buffetType: ['buffetDia'], description: 'Pan especial de la casa', image: 'https://i.imgur.com/sko99Ye.jpg', customizations: [] },
-  { id: 21, number: '5V', name: 'Rollitos de verduras', category: 'rollitos', buffetType: ['buffetDia'], description: 'Rollitos de verduras', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 22, number: '5', name: 'Mini rollo', category: 'rollitos', buffetType: ['buffetDia'], description: 'Mini rollitos', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=500&fit=crop&q=90', customizations: [] },
+  { id: 21, number: '5V', name: 'Rollitos de verduras', category: 'rollitos', buffetType: ['buffetDia'], description: 'Rollitos de verduras', image: 'https://i.imgur.com/SDaad7F.jpg', customizations: [] },
+  { id: 22, number: '5', name: 'Mini rollo', category: 'rollitos', buffetType: ['buffetDia'], description: 'Mini rollitos', image: 'https://i.imgur.com/cxo3axw.jpg', customizations: [] },
   
   // EMPANADILLAS
-  { id: 23, number: '3', name: 'Empanadilla de cerdo', category: 'empanadillas', buffetType: ['buffetDia'], description: 'Empanadillas de cerdo', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 24, number: '48', name: 'Empanadilla a la plancha', category: 'empanadillas', buffetType: ['buffetDia'], description: 'Empanadillas a la plancha', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 25, number: '48B', name: 'Empanadilla de verduras', category: 'empanadillas', buffetType: ['buffetDia'], description: 'Empanadillas de verduras', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 26, number: '48C', name: 'Gyoza de pollo con curry', category: 'empanadillas', buffetType: ['buffetDia'], description: 'Gyoza de pollo con curry', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=500&fit=crop&q=90', customizations: [] },
+  { id: 23, number: '3', name: 'Empanadilla de cerdo', category: 'empanadillas', buffetType: ['buffetDia'], description: 'Empanadillas de cerdo', image: 'https://i.imgur.com/bgKWSbb.jpg', customizations: [] },
+  { id: 24, number: '48', name: 'Empanadilla a la plancha', category: 'empanadillas', buffetType: ['buffetDia'], description: 'Empanadillas a la plancha', image: 'https://i.imgur.com/vkH2oBl.jpg', customizations: [] },
+  { id: 25, number: '48B', name: 'Empanadilla de verduras', category: 'empanadillas', buffetType: ['buffetDia'], description: 'Empanadillas de verduras', image: 'https://i.imgur.com/452Nl86.jpg', customizations: [] },
+  { id: 26, number: '48C', name: 'Gyoza de pollo con curry', category: 'empanadillas', buffetType: ['buffetDia'], description: 'Gyoza de pollo con curry', image: 'https://i.imgur.com/z1l6jmn.jpg', customizations: [] },
   
   // TAKOYAKI
   { id: 27, number: '5T', name: 'Takoyaki', category: 'entrantes', buffetType: ['buffetDia'], description: 'Bolitas de pulpo', image: 'https://i.imgur.com/sOsIna6.jpg', customizations: [] },
   
   // PLATOS PRINCIPALES - POLLO
-  { id: 28, number: '8', name: 'Chipirones', category: 'principales', buffetType: ['buffetDia'], description: 'Chipirones fritos', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 29, number: '9', name: 'Pollo frito con sésamo', category: 'principales', buffetType: ['buffetDia'], description: 'Pollo frito con sésamo', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 30, number: '10', name: 'Pollo con salsa Teriyaki', category: 'principales', buffetType: ['buffetDia'], description: 'Pollo con salsa teriyaki', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 31, number: '10a', name: 'Pollo al limón', category: 'principales', buffetType: ['buffetDia'], description: 'Pollo al limón', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 32, number: '11', name: 'Pollo con salsa japonesa', category: 'principales', buffetType: ['buffetDia'], description: 'Pollo con salsa japonesa', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 33, number: '14', name: 'Pinchitos de pollo', category: 'principales', buffetType: ['buffetDia'], description: 'Brochetas de pollo', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 34, number: '12', name: 'Alita de pollo', category: 'principales', buffetType: ['buffetDia'], description: 'Alitas de pollo', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 35, number: '49', name: 'Nuggets de pollo', category: 'principales', buffetType: ['buffetDia'], description: 'Nuggets de pollo', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 36, number: '41A', name: 'Pollo salteado con salsa jianbao sauce', category: 'principales', buffetType: ['buffetDia'], description: 'Pollo salteado con salsa jianbao', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
+  { id: 28, number: '8', name: 'Chipirones', category: 'principales', buffetType: ['buffetDia'], description: 'Chipirones fritos', image: 'https://i.imgur.com/2MxkSYQ.jpg', customizations: [] },
+  { id: 29, number: '9', name: 'Pollo frito con sésamo', category: 'principales', buffetType: ['buffetDia'], description: 'Pollo frito con sésamo', image: 'https://i.imgur.com/9DxCsdO.jpg', customizations: [] },
+  { id: 30, number: '10', name: 'Pollo con salsa Teriyaki', category: 'principales', buffetType: ['buffetDia'], description: 'Pollo con salsa teriyaki', image: 'https://i.imgur.com/yZU89AI.jpg', customizations: [] },
+  { id: 31, number: '10a', name: 'Pollo al limón', category: 'principales', buffetType: ['buffetDia'], description: 'Pollo al limón', image: 'https://i.imgur.com/V639DNw.jpg', customizations: [] },
+  { id: 32, number: '11', name: 'Pollo con salsa japonesa', category: 'principales', buffetType: ['buffetDia'], description: 'Pollo con salsa japonesa', image: 'https://i.imgur.com/l6hcADz.jpg', customizations: [] },
+{ id: 33, number: '14', name: 'Pinchitos de pollo', category: 'plancha', buffetType: ['buffetDia'], description: 'Brochetas de pollo', image: 'https://i.imgur.com/O9gcXeI.jpg', customizations: [] },
+  { id: 34, number: '12', name: 'Alita de pollo', category: 'plancha', buffetType: ['buffetDia'], description: 'Alitas de pollo', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
+  { id: 35, number: '49', name: 'Nuggets de pollo', category: 'principales', buffetType: ['buffetDia'], description: 'Nuggets de pollo', image: 'https://i.imgur.com/FTDKRdf.jpg', customizations: [] },
+  { id: 36, number: '41A', name: 'Pollo salteado con salsa jianbao sauce', category: 'principales', buffetType: ['buffetDia'], description: 'Pollo salteado con salsa jianbao', image: 'https://i.imgur.com/rwxJYOT.jpg', customizations: [] },
   
   // PLATOS PRINCIPALES - PESCADO Y MARISCO
-  { id: 37, number: '16', name: 'Merluza con salsa teriyaki', category: 'principales', buffetType: ['buffetDia'], description: 'Merluza con salsa teriyaki', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 38, number: '22', name: 'Langostino con sal y pimienta', category: 'principales', buffetType: ['buffetDia'], description: 'Langostinos con sal y pimienta', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 39, number: '40', name: 'Pata de sepia con salsa agridulce', category: 'principales', buffetType: ['buffetDia'], description: 'Pata de sepia con salsa agridulce', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 40, number: '40S', name: 'Pata de langostino con sal y pimienta', category: 'principales', buffetType: ['buffetDia'], description: 'Pata de langostino con sal y pimienta', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 41, number: '51A', name: 'Gamba con salsa de Ostra', category: 'principales', buffetType: ['buffetDia'], description: 'Gambas con salsa de ostra', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
+  { id: 37, number: '16', name: 'Merluza con salsa teriyaki', category: 'principales', buffetType: ['buffetDia'], description: 'Merluza con salsa teriyaki', image: 'https://i.imgur.com/yOkh3hE.jpg', customizations: [] },
+  { id: 38, number: '22', name: 'Langostino con sal y pimienta', category: 'principales', buffetType: ['buffetDia'], description: 'Langostinos con sal y pimienta', image: 'https://i.imgur.com/XaBn4tX.jpg', customizations: [] },
+  { id: 39, number: '40', name: 'Pata de sepia con salsa agridulce', category: 'principales', buffetType: ['buffetDia'], description: 'Pata de sepia con salsa agridulce', image: 'https://i.imgur.com/4FCqays.jpg', customizations: [] },
+{ id: 40, number: '40S', name: 'Pata de sepia con sal y pimienta', category: 'principales', buffetType: ['buffetDia'], description: 'Pata de sepia con sal y pimienta', image: 'https://i.imgur.com/HEGcm55.jpg', customizations: [] },
+{ id: 41, number: '51A', name: 'Gamba con salsa de Ostra', category: 'principales', buffetType: ['buffetDia'], description: 'Gambas con salsa de ostra', image: 'https://i.imgur.com/ST9yIGE.jpg', customizations: [] },
   
   // PLATOS PRINCIPALES - TERNERA Y PATO
-  { id: 42, number: '19', name: 'Ternera con salsa teriyaki', category: 'principales', buffetType: ['buffetDia'], description: 'Ternera con salsa teriyaki', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 43, number: '21', name: 'Pato con salsa Japonesa', category: 'principales', buffetType: ['buffetDia'], description: 'Pato con salsa japonesa', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 44, number: '50', name: 'Costilla con salsa agridulce', category: 'principales', buffetType: ['buffetDia'], description: 'Costillas con salsa agridulce', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 45, number: '50A', name: 'Costilla con sal y pimienta', category: 'principales', buffetType: ['buffetDia'], description: 'Costillas con sal y pimienta', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
+{ id: 42, number: '19', name: 'Ternera con salsa teriyaki', category: 'principales', buffetType: ['buffetDia'], description: 'Ternera con salsa teriyaki', image: 'https://i.imgur.com/P7oBt6I.jpg', customizations: [] },
+{ id: 43, number: '21', name: 'Pato con salsa Japonesa', category: 'principales', buffetType: ['buffetDia'], description: 'Pato con salsa japonesa', image: 'https://i.imgur.com/lHIR0fi.jpg', customizations: [] },
+{ id: 44, number: '50', name: 'Costilla con salsa agridulce', category: 'principales', buffetType: ['buffetDia'], description: 'Costillas con salsa agridulce', image: 'https://i.imgur.com/SL0rSr0.jpg', customizations: [] },
+{ id: 45, number: '50A', name: 'Costilla con sal y pimienta', category: 'principales', buffetType: ['buffetDia'], description: 'Costillas con sal y pimienta', image: 'https://i.imgur.com/1JZmTJQ.jpg', customizations: [] },
   { id: 46, number: '44', name: 'Rollito de ternera con verduras', category: 'principales', buffetType: ['buffetDia'], description: 'Rollitos de ternera con verduras', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
   
   // TEMPURA
-  { id: 47, number: '20', name: 'Tempura nomoriawase', category: 'tempura', buffetType: ['buffetDia'], description: 'Tempura variada', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=500&fit=crop&q=90', customizations: [] },
+{ id: 47, number: '20', name: 'Tempura nomoriawase', category: 'tempura', buffetType: ['buffetDia'], description: 'Tempura variada', image: 'https://i.imgur.com/oFobyR5.jpg', customizations: [] },
   
   // SUSHI - NIGIRI
   { id: 48, number: '29', name: 'Nigiri variado', category: 'sushi', buffetType: ['buffetDia'], description: 'Selección de nigiri variados', image: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=500&h=500&fit=crop&q=90', customizations: [] },
@@ -88,7 +88,7 @@ export const menuItems = [
   { id: 54, number: '27', name: 'Inari sushi', category: 'sushi', buffetType: ['buffetDia'], description: 'Sushi inari', image: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=500&h=500&fit=crop&q=90', customizations: [] },
   
   // HOSOMAKI
-  { id: 55, number: '24', name: 'Hosomaki de atún y salmón', category: 'makis', buffetType: ['buffetDia'], description: 'Hosomaki de atún y salmón', image: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=500&h=500&fit=crop&q=90', customizations: [] },
+{ id: 55, number: '24', name: 'Hosomaki de atún y salmón', category: 'makis', buffetType: ['buffetDia'], description: 'Hosomaki de atún y salmón', image: 'https://i.imgur.com/bvFt4f5.jpg', customizations: [] },
   { id: 56, number: '28', name: 'Hosomaki de plátano', category: 'makis', buffetType: ['buffetDia'], description: 'Hosomaki de plátano', image: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=500&h=500&fit=crop&q=90', customizations: [] },
   { id: 57, number: '32A', name: 'Hosomaki de aguacate y salmón', category: 'makis', buffetType: ['buffetDia'], description: 'Hosomaki de aguacate y salmón', image: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=500&h=500&fit=crop&q=90', customizations: [] },
   { id: 58, number: '32b', name: 'Hosomaki de aguacate pepino', category: 'makis', buffetType: ['buffetDia'], description: 'Hosomaki de aguacate y pepino', image: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=500&h=500&fit=crop&q=90', customizations: [] },
@@ -98,7 +98,7 @@ export const menuItems = [
   { id: 62, number: '32V', name: 'Hosomaki de Verdura con queso', category: 'makis', buffetType: ['buffetDia'], description: 'Hosomaki de verdura con queso', image: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=500&h=500&fit=crop&q=90', customizations: [] },
   
   // URAMAKI
-  { id: 63, number: '25', name: 'Uramaki de salmon con queso crema', category: 'makis', buffetType: ['buffetDia'], description: 'Uramaki de salmón con queso crema', image: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=500&h=500&fit=crop&q=90', customizations: [] },
+{ id: 63, number: '25', name: 'Uramaki de salmon con queso crema', category: 'makis', buffetType: ['buffetDia'], description: 'Uramaki de salmón con queso crema', image: 'https://i.imgur.com/IXqtagD.jpg', customizations: [] },
   { id: 64, number: '25C', name: 'California de salmon y aguacate', category: 'makis', buffetType: ['buffetDia'], description: 'California de salmón y aguacate', image: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=500&h=500&fit=crop&q=90', customizations: [] },
   { id: 65, number: '25Q', name: 'California con queso', category: 'makis', buffetType: ['buffetDia'], description: 'California con queso', image: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=500&h=500&fit=crop&q=90', customizations: [] },
   { id: 66, number: '26', name: 'Uramaki de Verduras', category: 'makis', buffetType: ['buffetDia'], description: 'Uramaki de verduras', image: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=500&h=500&fit=crop&q=90', customizations: [] },
@@ -140,11 +140,11 @@ export const menuItems = [
   
   // PLATOS PRINCIPALES - PATO Y POLLO
   { id: 95, number: '43', name: 'Pato aromatizado crujiente', category: 'principales', buffetType: ['buffetNoche', 'buffetFinSemana'], description: 'Pato aromatizado crujiente', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 96, number: '4p', name: 'Pan de pato', category: 'panes', buffetType: ['buffetNoche', 'buffetFinSemana'], description: 'Pan relleno de pato', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=500&fit=crop&q=90', customizations: [] },
+  { id: 96, number: '4p', name: 'Pan de pato', category: 'panes', buffetType: ['buffetNoche', 'buffetFinSemana'], description: 'Pan relleno de pato', image: 'https://i.imgur.com/8bw4Pfa.jpg', customizations: [] },
   
   // SHAOMAI
-  { id: 97, number: '54', name: 'Shaomai frito', category: 'entrantes', buffetType: ['buffetNoche', 'buffetFinSemana'], description: 'Shaomai frito', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=500&fit=crop&q=90', customizations: [] },
-  { id: 98, number: '54a', name: 'Shaomai al vapor', category: 'entrantes', buffetType: ['buffetNoche', 'buffetFinSemana'], description: 'Shaomai al vapor', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=500&fit=crop&q=90', customizations: [] },
+  { id: 97, number: '54', name: 'Shaomai frito', category: 'entrantes', buffetType: ['buffetNoche', 'buffetFinSemana'], description: 'Shaomai frito', image: 'https://i.imgur.com/MGCWrNg.jpg', customizations: [] },
+  { id: 98, number: '54a', name: 'Shaomai al vapor', category: 'entrantes', buffetType: ['buffetNoche', 'buffetFinSemana'], description: 'Shaomai al vapor', image: 'https://i.imgur.com/G0b6nXR.jpg', customizations: [] },
   
   // PINCHOS
   { id: 99, number: '45', name: 'Pincho de gamba', category: 'principales', buffetType: ['buffetNoche', 'buffetFinSemana'], description: 'Pincho de gamba', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
@@ -152,7 +152,7 @@ export const menuItems = [
   { id: 101, number: '55', name: 'Pincho de salmón', category: 'principales', buffetType: ['buffetNoche', 'buffetFinSemana'], description: 'Pincho de salmón', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73c83b8?w=500&h=500&fit=crop&q=90', customizations: [] },
   
   // EMPANADILLAS
-  { id: 102, number: '57', name: 'Empanadilla de gamba', category: 'empanadillas', buffetType: ['buffetNoche', 'buffetFinSemana'], description: 'Empanadillas de gamba', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=500&fit=crop&q=90', customizations: [] },
+  { id: 102, number: '57', name: 'Empanadilla de gamba', category: 'empanadillas', buffetType: ['buffetNoche', 'buffetFinSemana'], description: 'Empanadillas de gamba', image: 'https://i.imgur.com/0IxZJvg.jpg', customizations: [] },
   
   // URAMAKI ESPECIALES
   { id: 103, number: '25a', name: 'Uramaki de salmón con huevas', category: 'makis', buffetType: ['buffetNoche', 'buffetFinSemana'], description: 'Uramaki de salmón con huevas', image: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=500&h=500&fit=crop&q=90', customizations: [] },

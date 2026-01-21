@@ -16,13 +16,17 @@ const WelcomeScreen = ({ onComplete }) => {
       try {
         const searchParams = new URLSearchParams(window.location.search)
         const qrCode = searchParams.get('mesa') || searchParams.get('qr')
-        if (!qrCode) {
-          setError('Código QR no válido. Por favor, escanea el código QR de la mesa.')
-          setLoading(false)
-          return
-        }
 
-        const mesa = await getMesaByQR(qrCode)
+        // if (!qrCode) {
+        //   setError('Código QR no válido. Por favor, escanea el código QR de la mesa.')
+        //   setLoading(false)
+        //   return
+        // }
+
+        // Si no hay QR, usar una mesa “ficticia” para poder acceder sin escanear
+        const mesa = qrCode
+          ? await getMesaByQR(qrCode)
+          : { id: 'DEV-MESA', numero_mesa: 'DEV' }
         setMesaData(mesa)
 
         // Verificar si ya existe un pedido activo para esta mesa
